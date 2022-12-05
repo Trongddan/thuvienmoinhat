@@ -12,9 +12,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class ThanhvienDao132 {
+public class ThanhvienDao132 extends Dao{
 
-    Connection conn = null;
     PreparedStatement ps = null;
     ResultSet rs = null;
 
@@ -22,7 +21,6 @@ public class ThanhvienDao132 {
     public Thanhvien checkLogin(String tendangnhap, String matkhau) throws SQLException {
         String query = "SELECT * FROM tblthanhvien132 WHERE tendangnhap= ? AND matkhau=?";
         try {
-            conn = new DbConnect().getConnection();
             ps = conn.prepareStatement(query);
             ps.setString(1, tendangnhap);
             ps.setString(2, matkhau);
