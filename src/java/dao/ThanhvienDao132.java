@@ -27,17 +27,17 @@ public class ThanhvienDao132 extends Dao{
             rs = ps.executeQuery();
             while (rs.next()) {
                 Thanhvien tv = new Thanhvien(
-                        rs.getInt(1),
-                        rs.getString(2),
-                        rs.getString(3),
-                        rs.getString(4),
-                        rs.getString(5),
-                        rs.getDate(6),
-                        rs.getString(7),
-                        rs.getString(8),
-                        rs.getString(9),
-                        rs.getString(10),
-                        rs.getString(11)
+                        rs.getInt("id"),
+                        rs.getString("ma"),
+                        rs.getString("ten"),
+                        rs.getString("tendangnhap"),
+                        rs.getString("matkhau"),
+                        rs.getDate("ngaysinh"),
+                        rs.getString("diachi"),
+                        rs.getString("email"),
+                        rs.getString("diachi"),
+                        rs.getString("vaitro"),
+                        rs.getString("ghichu")
                 );
                 if (tv != null) {
                     return tv;

@@ -38,8 +38,8 @@
         <div class="container_scanner">
             <div class="input_area">
                 <p style="margin: 0px">${mess}</p>
-                <form action="scanSV.jsp" class="form_maSV" method="POST">
-                    <label>Nhập mã Sinh viên</label>
+                <form action="GDQuetthe132.jsp" class="form_maSV" method="POST">
+                    <label class="text-white">Vui lòng quét thẻ bạn đọc để tiếp tục:</label>
                     <input name="mavach" class="form-control"/>
                     <button class="btn btn-primary mt-2 mb-4 float-left" type="submit">Xác nhận</button>
                 </form>

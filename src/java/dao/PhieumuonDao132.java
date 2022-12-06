@@ -24,35 +24,24 @@ public class PhieumuonDao132 extends Dao {
     PreparedStatement ps = null;
     ResultSet rs = null;
 
-    public void luuPhieumuon(Phieumuon132 pm, int tbdId, ArrayList<Sach132> listSach) throws SQLException {
+    public void luuPhieumuon(Phieumuon132 pm) throws SQLException {
         String query = "INSERT INTO tblphieumuon132(maphieu,ngayin,soluong,tblThebandoc132id) VALUE(?,?,?,?)";
-        String query2 = "INSERT INTO tblsachmuon132(ngaymuon,ngaytra,trangthai,tblPhieumuon132id,tblSach132id) VALUE(?,?,?,?,?)";
         try {
             //thuc hien luu phieu muon va tra ve id cua ban ghi vua luu
             ps = conn.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, pm.getMaphieu());
             ps.setDate(2, pm.getNgayin());
             ps.setInt(3, pm.getSoluong());
-            ps.setInt(4, tbdId);
+            ps.setInt(4, pm.getThebandoc().getId());
             int r = ps.executeUpdate();
             rs = ps.getGeneratedKeys();
             int generatedKey = 0;
             if (rs.next()) {
                 generatedKey = rs.getInt(1);
             }
+            pm.setId(generatedKey);
             //thuc hien luu sach muon
-            for (Sach132 i : listSach) {
-                ps = conn.prepareStatement(query2);
-                ps.setDate(1, pm.getNgayin());
-                ps.setDate(2,java.sql.Date.valueOf(java.time.LocalDate.now().plusMonths(1)) );
-                ps.setInt(3, 0);
-                ps.setInt(4, generatedKey);
-                ps.setInt(5, i.getId());
-                int k = ps.executeUpdate();
-
-            }
-            
-
+            pm.setArrSachMuon(pm.getListsach());
 //            System.out.println(generatedKey);
         } catch (Exception e) {
             e.printStackTrace();

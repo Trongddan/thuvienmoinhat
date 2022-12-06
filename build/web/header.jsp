@@ -17,7 +17,7 @@
     </head>
     <body>
         <nav style="background: #17a2b8" class="navbar navbar-expand-lg navbar-light">
-  <a class="navbar-brand text-white" href="trangchinh.jsp">Trang chủ</a>
+  <a class="navbar-brand text-white" href="GDChinhNV132.jsp">Trang chủ</a>
   <button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -31,7 +31,7 @@
           Chức năng
         </a>
           <div style="background: #17a2b8" class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a style="background: #17a2b8" class="dropdown-item text-white" href="/thuvienquocgia/scanSV.jsp">Cho mượn sách</a>
+              <a style="background: #17a2b8" class="dropdown-item text-white" href="/thuvienquocgia/GDQuetthe132.jsp">Cho mượn sách</a>
           <a style="background: #17a2b8" class="dropdown-item text-white" href="#">Nhận trả sách</a>
         </div>
       </li>

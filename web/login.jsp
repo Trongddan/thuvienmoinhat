@@ -22,7 +22,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="password" class="text-info">Mật khẩu:</label><br>
-                                <input type="text" name="matkhau" id="password" class="form-control">
+                                <input type="password" name="matkhau" id="password" class="form-control">
                             </div>
                             <div class="form-group">
                                 <input type="submit" name="Đăng nhập" class="btn btn-info btn-md" value="submit">

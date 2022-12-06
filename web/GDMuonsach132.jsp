@@ -33,7 +33,7 @@
         SachmuonDao132 smDao = new SachmuonDao132();
         if (tbd == null) {
             request.setAttribute("mess", "Mã sinh viên không tồn tại");
-            request.getRequestDispatcher("scanSV.jsp").forward(request, response);
+            request.getRequestDispatcher("GDQuetthe132.jsp").forward(request, response);
         } else {
             listSachmuon = smDao.getSachmuon(String.valueOf(tbd.getId()));
             session.setAttribute("tbd",tbd);
@@ -79,7 +79,7 @@
             <th style="width: 150px">Ngày đã trả</th>
             <tbody>
                 <%
-                    if (listSachmuon.size() > 0) {
+                    if (listSachmuon.size() > 0 && listSachmuon!=null) {
                         for (Sachmuon132 i : listSachmuon) {
                             if (i.getTrangthai() == 1) {
                 %>
@@ -144,7 +144,7 @@
             </thead>
         </table>
     </div>
-    <a href="NhapMasach132.jsp"><button class="text-white btn btn-warning mt-4 mr-3">Nhập mã sách chọn mượn</button></a>
+            <a href="QuetMaSach132.jsp"><button class="text-white btn btn-warning mt-4 mr-3">Tiếp tục</button></a>
     <a href="doResetMuonSach.jsp"><button class="btn btn-secondary mt-4 mr-3">Đặt lại</button></a>
     <form action="doluuphieuMuon.jsp" method="POST">
 
@@ -154,6 +154,7 @@
         <input hidden name="ngayin" value="<%=java.time.LocalDate.now()%>"/>
         <input hidden name="soluong" value="<%=soluong%>"/>
         <input hidden name="maphieu" value="<%=maphieu%>"/>
+        
         <button type="submit" class="btn btn-success mt-4">Lưu</button>
     </form>
 

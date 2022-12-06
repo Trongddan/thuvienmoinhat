@@ -65,7 +65,7 @@
                     </tbody>
                 </Table>
             </div>
-            <a href="doResetMuonSach.jsp"><button class="btn btn-success">Quay về</button></a>
+                    <a href="doQuayve.jsp"><button class="btn btn-success">Quay về</button></a>
         </div>
 
     </body>

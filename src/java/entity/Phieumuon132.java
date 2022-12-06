@@ -6,6 +6,7 @@
 package entity;
 
 import dao.PhieumuonDao132;
+import dao.SachmuonDao132;
 import java.sql.Date;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -33,6 +34,16 @@ public class Phieumuon132 {
         this.thebandoc = thebandoc;
         this.sachmuon132 = sachmuon132;
     }
+    private ArrayList<Sach132> listsach;
+
+    public ArrayList<Sach132> getListsach() {
+        return listsach;
+    }
+
+    public void setListsach(ArrayList<Sach132> listsach) {
+        this.listsach = listsach;
+    }
+    
 
     public int getId() {
         return id;
@@ -77,12 +88,14 @@ public class Phieumuon132 {
     public ArrayList<Sachmuon132> getSachmuon132() {
         return sachmuon132;
     }
-
-    public void setSachmuon132(ArrayList<Sachmuon132> sachmuon132) {
-        this.sachmuon132 = sachmuon132;
+    public void setArrSachMuon(ArrayList<Sach132> listSach) throws SQLException{
+        SachmuonDao132 sm132 = new SachmuonDao132();
+        sm132.luuSachmuon(listSach, this.id);
     }
-    public void luuPhieumuon(Phieumuon132 pm,int tbdId, ArrayList<Sach132> listSach) throws SQLException{
+
+    
+    public void luuPhieumuon(Phieumuon132 pm) throws SQLException{
         PhieumuonDao132 pmDao = new PhieumuonDao132();
-        pmDao.luuPhieumuon(pm,tbdId,listSach);
+        pmDao.luuPhieumuon(pm);
     }
 }

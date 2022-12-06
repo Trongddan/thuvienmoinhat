@@ -47,7 +47,7 @@ public class LoginController extends HttpServlet {
             } else {
                 HttpSession session = request.getSession();
                 session.setAttribute("acc", a);
-                request.getRequestDispatcher("trangchinh.jsp").forward(request, response);
+                request.getRequestDispatcher("GDChinhNV132.jsp").forward(request, response);
             }
         } catch (Exception e) {
             e.printStackTrace();

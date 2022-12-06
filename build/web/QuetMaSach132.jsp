@@ -51,8 +51,8 @@
         <div class="Nhapmasach">
             <p>${mess}</p>
             <div class="input_area">               
-                <form method="POST" action="NhapMasach132.jsp" class="form_nhapmasach">
-                    <label class="label">Nhập mã sách chọn mượn</label><br>
+                <form method="POST" action="QuetMaSach132.jsp" class="form_nhapmasach">
+                    <label class="label">Quét mã sách chọn mượn</label><br>
                     <input class="mavachsach" name="mavachsach" class="form-control"/> <br>                  
                     <button style="" class="btn btn-primary  btnsubmmit " type="submit">Xác nhận</button>
                 </form>

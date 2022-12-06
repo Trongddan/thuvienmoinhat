@@ -15,23 +15,30 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <% 
-           String soluong = request.getParameter("soluong");
-           String tbd = request.getParameter("tbd");
-           String maphieu = request.getParameter("maphieu");
-           Phieumuon132 pm132= new Phieumuon132();
-           pm132.setMaphieu(maphieu);
-           pm132.setNgayin(java.sql.Date.valueOf(java.time.LocalDate.now()));
-           pm132.setSoluong(Integer.parseInt(soluong));
-           ArrayList<Sach132> listsach =(ArrayList<Sach132>) session.getAttribute("listsach");
-           if(Integer.parseInt(soluong)!=0){
-               pm132.luuPhieumuon(pm132,Integer.parseInt(tbd),listsach);
-               session.setAttribute("maphieumuon",maphieu);
-               response.sendRedirect("GDInPhieumuon132.jsp");
+        <%
+            String tbd = request.getParameter("tbd");
+            Thebandoc132 tbd132 = new Thebandoc132();
+            tbd132.setId(Integer.parseInt(tbd));
+            String soluong = request.getParameter("soluong");
+
+            String maphieu = request.getParameter("maphieu");
+            Phieumuon132 pm132 = new Phieumuon132();
+            pm132.setMaphieu(maphieu);
+            pm132.setNgayin(java.sql.Date.valueOf(java.time.LocalDate.now()));
+            pm132.setSoluong(Integer.parseInt(soluong));
+            pm132.setThebandoc(tbd132);
+            ArrayList<Sach132> listsach = (ArrayList<Sach132>) session.getAttribute("listsach");
+            pm132.setListsach(listsach);
+            if (Integer.parseInt(soluong) != 0) {
+                pm132.luuPhieumuon(pm132);
+                session.setAttribute("maphieumuon", maphieu);
+                response.sendRedirect("GDInPhieumuon132.jsp");
 //               session.removeAttribute("listsach");
-           }
-           %>
-           
+            } else {
+                response.sendRedirect("GDMuonsach132.jsp");
+            }
+        %>
+
     </head>
-    
+
 </html>
